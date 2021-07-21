@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car{% endblock %}
+
+{% block body %}
+    <h1>Car</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ car.id }}</td>
+            </tr>
+            <tr>
+                <th>Manufacturer</th>
+                <td>{{ car.manufacturer }}</td>
+            </tr>
+            <tr>
+                <th>Model</th>
+                <td>{{ car.model }}</td>
+            </tr>
+            <tr>
+                <th>Color</th>
+                <td>{{ car.color }}</td>
+            </tr>
+            <tr>
+                <th>Gearbox</th>
+                <td>{{ car.gearbox }}</td>
+            </tr>
+            <tr>
+                <th>Fuel</th>
+                <td>{{ car.fuel }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cae_index') }}">back to list</a>
+
+    <a href="{{ path('cae_edit', {'id': car.id}) }}">edit</a>
+
+    {{ include('cae/_delete_form.html.twig') }}
+{% endblock %}
